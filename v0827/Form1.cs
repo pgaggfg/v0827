@@ -11,10 +11,26 @@ using System.Windows.Forms;
 namespace v0827
 {
     public partial class Form1 : Form
+        int vx,vy;
     {
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Left += vx;
+            label1.Top += vy;
+
+            label1.Left = -10;
+            label1.Top = -10;
+
+            Point mp = MousePosition;
+
+            mp = Point to Client(mp);
+
+
         }
     }
 }
